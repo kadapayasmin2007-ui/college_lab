@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | LABTRACK</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fc;
+    color: #172554;
+}
+
+header {
+    background: #071a3d;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    color: #ffd54a;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffd54a;
+}
+
+.banner {
+    min-height: 280px;
+    background:
+    linear-gradient(rgba(5, 20, 55, .78), rgba(5, 20, 55, .78)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+.banner h1 {
+    font-size: 44px;
+    color: #ffd54a;
+    margin-bottom: 12px;
+}
+
+.banner p {
+    font-size: 17px;
+}
+
+.container {
+    width: 86%;
+    max-width: 1150px;
+    margin: 65px auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #0b2454;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #64748b;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.3fr;
+    gap: 30px;
+}
+
+.contact-info,
+.contact-form {
+    background: white;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 5px 22px rgba(15, 35, 75, .08);
+}
+
+.contact-info h2,
+.contact-form h2 {
+    color: #0b2454;
+    margin-bottom: 25px;
+}
+
+.info-card {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.info-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    background: #fff4c7;
+    color: #9a7000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 21px;
+}
+
+.info-card h3 {
+    color: #0b2454;
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: 600;
+    color: #263b62;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dce8;
+    border-radius: 7px;
+    outline: none;
+    font-size: 15px;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #17458b;
+    box-shadow: 0 0 0 3px rgba(23, 69, 139, .1);
+}
+
+form textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.submit-btn {
+    margin-top: 20px;
+    padding: 13px 28px;
+    background: #0b2454;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #c49300;
+    color: #071a3d;
+}
+
+#formMessage {
+    margin-top: 15px;
+    color: #166534;
+    font-weight: 600;
+}
+
+.note {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.contact-bottom {
+    margin-top: 35px;
+    background: #0b2454;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 12px;
+}
+
+.contact-bottom h2 {
+    color: #ffd54a;
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #071a3d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+}
+
+footer span {
+    color: #ffd54a;
+}
+
+@media(max-width: 800px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .banner h1 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">LABTRACK</div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="equipment.html">EQUIPMENT</a>
+        <a href="services.html">SERVICES</a>
+        <a href="contact.html" class="active">CONTACT</a>
+        <a href="login.html">ADMIN LOGIN</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <div>
+        <h1>Contact Us</h1>
+        <p>We are here to help you with your laboratory management needs.</p>
+    </div>
+</section>
+
+<section class="container">
+
+    <div class="section-title">
+        <h2>Get In Touch</h2>
+        <p>Have a question? Contact the LABTRACK team.</p>
+    </div>
+
+    <div class="contact-layout">
+
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+
+            <div class="info-card">
+                <div class="info-icon">📍</div>
+                <div>
+                    <h3>Our Location</h3>
+                    <p>College Laboratory<br>College Campus, Andhra Pradesh, India</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">📞</div>
+                <div>
+                    <h3>Phone Number</h3>
+                    <p>Update with your college laboratory contact number.</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">✉️</div>
+                <div>
+                    <h3>Email Address</h3>
+                    <p>Update with your official college email address.</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">🕒</div>
+                <div>
+                    <h3>Working Hours</h3>
+                    <p>Monday – Saturday<br>College working hours</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+
+            <form id="contactForm">
+
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="Enter subject" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" placeholder="Write your message here..." required></textarea>
+
+                <button type="submit" class="submit-btn">Submit Message</button>
+
+                <p id="formMessage"></p>
+            </form>
+
+            <p class="note">
+                Note: This is currently a demonstration form. Messages are not
+                sent or stored. Backend integration can be added later.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="contact-bottom">
+        <h2>LABTRACK – Smart Laboratory Management</h2>
+        <p>Making laboratory equipment and student records easier to manage.</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 <span>LABTRACK</span> | College Laboratory Management System</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("formMessage").textContent =
+        "Thank you! Your form has been checked successfully (demo only).";
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>

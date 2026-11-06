@@ -1,0 +1,493 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Services | LABTRACK</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #252b3b;
+}
+
+/* HEADER */
+header {
+    background: #101d35;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #e9bd70;
+}
+
+.logo span {
+    color: white;
+}
+
+header p {
+    font-size: 12px;
+    color: #cbd2df;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+nav {
+    background: #192b49;
+    padding: 17px 5%;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e9bd70;
+}
+
+/* BANNER */
+.banner {
+    min-height: 320px;
+    background:
+    linear-gradient(rgba(10,22,42,0.85), rgba(10,22,42,0.75)),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c")
+    center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 45px 20px;
+}
+
+.banner h1 {
+    font-size: 43px;
+    margin-bottom: 15px;
+}
+
+.banner h1 span {
+    color: #e9bd70;
+}
+
+.banner p {
+    color: #e2e6ed;
+    font-size: 16px;
+}
+
+/* INTRO */
+.intro {
+    padding: 60px 8%;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.intro h2 {
+    color: #172b4d;
+    font-size: 31px;
+    margin-bottom: 18px;
+}
+
+.intro p {
+    color: #777;
+    line-height: 1.9;
+}
+
+/* SERVICES */
+.services {
+    padding: 30px 8% 70px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-title h2 {
+    color: #172b4d;
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px #00000012;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+}
+
+.service-content {
+    padding: 24px;
+}
+
+.service-content h3 {
+    color: #172b4d;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.service-content p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* PROCESS */
+.process {
+    background: #172b4d;
+    padding: 65px 8%;
+}
+
+.process .section-title h2 {
+    color: #e9bd70;
+}
+
+.process .section-title p {
+    color: #dce2eb;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 22px;
+}
+
+.process-card {
+    text-align: center;
+    padding: 28px 20px;
+    background: #21385c;
+    border-radius: 12px;
+    border-bottom: 4px solid #e9bd70;
+}
+
+.process-card .number {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 17px;
+    background: #e9bd70;
+    color: #172b4d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.process-card h3 {
+    color: white;
+    margin-bottom: 12px;
+}
+
+.process-card p {
+    color: #dce2eb;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 60px 20px;
+    background: #e9bd70;
+}
+
+.cta h2 {
+    color: #172b4d;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.cta p {
+    color: #39445a;
+    margin-bottom: 22px;
+}
+
+.cta a {
+    display: inline-block;
+    background: #172b4d;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #101d35;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    line-height: 1.9;
+}
+
+footer span {
+    color: #e9bd70;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .banner h1 {
+        font-size: 34px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div>
+        <div class="logo">⚙ LAB<span>TRACK</span></div>
+        <p>COLLEGE LABORATORY MANAGEMENT SYSTEM</p>
+    </div>
+
+    <div>
+        <p>📍 Smart Laboratory Management</p>
+        <p>💻 Manage • Monitor • Maintain</p>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="equipment.html">EQUIPMENT</a>
+    <a href="services.html" class="active">SERVICES</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html">ADMIN LOGIN</a>
+</nav>
+
+<!-- BANNER -->
+<section class="banner">
+    <div>
+        <h1>Our <span>Services</span></h1>
+        <p>Smart solutions for efficient college laboratory management</p>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+<section class="intro">
+    <h2>What We Provide</h2>
+
+    <p>
+        LABTRACK offers a centralized digital platform to simplify
+        laboratory activities. It helps administrators organize
+        equipment information, student records, equipment issues,
+        returns and availability tracking in an efficient manner.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+
+    <div class="section-title">
+        <h2>Our Management Services</h2>
+        <p>Explore the major features of our system</p>
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <img
+            src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5"
+            alt="Equipment Management">
+
+            <div class="service-content">
+                <h3>Equipment Management</h3>
+                <p>
+                    Add, update, view and manage laboratory
+                    equipment details, categories and quantities.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902"
+            alt="Student Management">
+
+            <div class="service-content">
+                <h3>Student Management</h3>
+                <p>
+                    Maintain student names, departments,
+                    contact details and registration information.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+            alt="Equipment Issue">
+
+            <div class="service-content">
+                <h3>Equipment Issue</h3>
+                <p>
+                    Record equipment issued to students and
+                    maintain issue dates and return dates.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img
+            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837"
+            alt="Equipment Return">
+
+            <div class="service-content">
+                <h3>Equipment Return</h3>
+                <p>
+                    Update returned equipment records and
+                    automatically adjust available quantities.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40"
+            alt="Digital Records">
+
+            <div class="service-content">
+                <h3>Digital Record Keeping</h3>
+                <p>
+                    Maintain organized digital records of
+                    equipment, students and issue transactions.
+                </p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+            alt="Equipment Tracking">
+
+            <div class="service-content">
+                <h3>Availability Tracking</h3>
+                <p>
+                    Check total and available equipment quantities
+                    and monitor laboratory resources.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="process">
+
+    <div class="section-title">
+        <h2>How LABTRACK Works</h2>
+        <p>A simple process for managing laboratory activities</p>
+    </div>
+
+    <div class="process-grid">
+
+        <div class="process-card">
+            <div class="number">1</div>
+            <h3>Add Equipment</h3>
+            <p>Register equipment details in the system.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="number">2</div>
+            <h3>Register Students</h3>
+            <p>Maintain student information and records.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="number">3</div>
+            <h3>Issue Equipment</h3>
+            <p>Record equipment issued to students.</p>
+        </div>
+
+        <div class="process-card">
+            <div class="number">4</div>
+            <h3>Return Equipment</h3>
+            <p>Update return status and availability.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+    <h2>Start Managing Your Laboratory</h2>
+    <p>Use LABTRACK to organize your laboratory resources digitally.</p>
+    <a href="login.html">ADMIN LOGIN →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>⚙ LAB<span>TRACK</span></h3>
+    <p>College Laboratory Management System</p>
+    <p>Smart Equipment Management • Digital Records • Easy Tracking</p>
+    <p>© 2026 LABTRACK. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+```

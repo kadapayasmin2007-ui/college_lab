@@ -1,0 +1,613 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LABTRACK | College Laboratory Management</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #252b3b;
+}
+
+/* HEADER */
+header {
+    background: #101d35;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #e9bd70;
+}
+
+.logo span {
+    color: white;
+}
+
+header p {
+    font-size: 12px;
+    color: #cbd2df;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+nav {
+    background: #192b49;
+    padding: 17px 5%;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e9bd70;
+}
+
+/* HERO */
+.hero {
+    min-height: 490px;
+    background:
+    linear-gradient(90deg, rgba(10,22,42,0.95), rgba(10,22,42,0.35)),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c")
+    center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    padding: 60px 9%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #e9bd70;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #e2e6ed;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #e9bd70;
+    color: #17233a;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+}
+
+/* SECTION */
+.section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-title h2 {
+    font-size: 31px;
+    color: #172b4d;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+/* STATISTICS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 22px;
+    margin-top: -35px;
+    position: relative;
+    padding: 0 7%;
+}
+
+.stat-card {
+    background: white;
+    padding: 27px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #00000012;
+    border-bottom: 4px solid #d5a74e;
+}
+
+.stat-card h2 {
+    color: #172b4d;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* DASHBOARD CARDS */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.dash-card {
+    background: white;
+    border-radius: 13px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px #00000010;
+    transition: 0.3s;
+}
+
+.dash-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px #00000020;
+}
+
+.dash-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.dash-content {
+    padding: 23px;
+}
+
+.dash-content h3 {
+    color: #172b4d;
+    margin-bottom: 10px;
+}
+
+.dash-content p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.dash-content a {
+    display: inline-block;
+    background: #172b4d;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.dash-content a:hover {
+    background: #d5a74e;
+    color: #172b4d;
+}
+
+/* ABOUT SECTION */
+.feature {
+    background: #172b4d;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 65px 8%;
+}
+
+.feature img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.feature h2 {
+    color: #e9bd70;
+    font-size: 31px;
+    margin-bottom: 20px;
+}
+
+.feature p {
+    line-height: 1.9;
+    color: #dce2eb;
+    margin-bottom: 20px;
+}
+
+.feature ul {
+    line-height: 2.2;
+    padding-left: 20px;
+}
+
+/* EQUIPMENT GALLERY */
+.equipment {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 22px;
+}
+
+.equipment-card {
+    background: white;
+    padding: 14px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px #00000010;
+    transition: 0.3s;
+}
+
+.equipment-card:hover {
+    transform: translateY(-5px);
+}
+
+.equipment-card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.equipment-card h3 {
+    color: #172b4d;
+    font-size: 17px;
+    margin: 13px 0 6px;
+}
+
+.equipment-card p {
+    color: #888;
+    font-size: 13px;
+}
+
+/* CALL TO ACTION */
+.cta {
+    background: #e9bd70;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.cta h2 {
+    color: #172b4d;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.cta p {
+    color: #39445a;
+    margin-bottom: 22px;
+}
+
+.cta a {
+    display: inline-block;
+    background: #172b4d;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #101d35;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    line-height: 1.9;
+}
+
+footer span {
+    color: #e9bd70;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .feature {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div>
+        <div class="logo">⚙ LAB<span>TRACK</span></div>
+        <p>COLLEGE LABORATORY MANAGEMENT SYSTEM</p>
+    </div>
+
+    <div>
+        <p>📍 Smart Laboratory Management</p>
+        <p>💻 Manage • Monitor • Maintain</p>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="equipment.html">EQUIPMENT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html">ADMIN LOGIN</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to <span>LABTRACK</span></h1>
+
+        <p>
+            A smart and modern College Laboratory Management System.
+            Manage laboratory equipment, student details, equipment
+            issues and returns through one organized digital platform.
+        </p>
+
+        <a href="equipment.html" class="hero-btn">
+            EXPLORE EQUIPMENT →
+        </a>
+    </div>
+</section>
+
+<!-- STATISTICS -->
+<section class="stats">
+
+    <div class="stat-card">
+        <h2 id="totalEquipment">--</h2>
+        <p>Total Equipment</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 id="totalStudents">--</h2>
+        <p>Registered Students</p>
+    </div>
+
+    <div class="stat-card">
+        <h2 id="issuedEquipment">--</h2>
+        <p>Issued Equipment Records</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>24/7</h2>
+        <p>Digital Access</p>
+    </div>
+
+</section>
+
+<!-- MANAGEMENT DASHBOARD -->
+<section class="section">
+
+    <div class="section-title">
+        <h2>Laboratory Management</h2>
+        <p>Manage all laboratory activities in one place</p>
+    </div>
+
+    <div class="dashboard">
+
+        <div class="dash-card">
+            <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+            alt="Computer Laboratory">
+
+            <div class="dash-content">
+                <h3>Equipment Management</h3>
+                <p>Add, view, update and manage laboratory equipment details.</p>
+                <a href="equipment.html">Explore Equipment →</a>
+            </div>
+        </div>
+
+        <div class="dash-card">
+            <img
+            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902"
+            alt="Students">
+
+            <div class="dash-content">
+                <h3>Student Management</h3>
+                <p>Maintain student information and registration records.</p>
+                <a href="login.html">Manage Students →</a>
+            </div>
+        </div>
+
+        <div class="dash-card">
+            <img
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+            alt="Laboratory Equipment">
+
+            <div class="dash-content">
+                <h3>Issue Equipment</h3>
+                <p>Record equipment issued to registered laboratory students.</p>
+                <a href="login.html">Issue Equipment →</a>
+            </div>
+        </div>
+
+        <div class="dash-card">
+            <img
+            src="https://images.unsplash.com/photo-1581092160562-40aa08e78837"
+            alt="Technology Laboratory">
+
+            <div class="dash-content">
+                <h3>Return & Records</h3>
+                <p>Track equipment returns and maintain issue records.</p>
+                <a href="login.html">View Records →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT LABTRACK -->
+<section class="feature">
+
+    <div>
+        <h2>About Our Laboratory</h2>
+
+        <p>
+            LABTRACK is designed to simplify and improve college
+            laboratory operations. It helps manage equipment,
+            student information, issue and return activities
+            through a centralized digital system.
+        </p>
+
+        <ul>
+            <li>Easy Equipment Management</li>
+            <li>Student Information Management</li>
+            <li>Equipment Issue and Return</li>
+            <li>Digital Laboratory Records</li>
+            <li>Equipment Availability Tracking</li>
+        </ul>
+    </div>
+
+    <img
+    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758"
+    alt="Modern College Laboratory">
+
+</section>
+
+<!-- EQUIPMENT GALLERY -->
+<section class="section">
+
+    <div class="section-title">
+        <h2>Our Laboratory Equipment</h2>
+        <p>Explore the technology and equipment available in our laboratory</p>
+    </div>
+
+    <div class="equipment">
+
+        <div class="equipment-card">
+            <img
+            src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5"
+            alt="Computer">
+            <h3>Computers</h3>
+            <p>Computer laboratory systems</p>
+        </div>
+
+        <div class="equipment-card">
+            <img
+            src="https://images.unsplash.com/photo-1587829741301-dc798b83add3"
+            alt="Keyboard">
+            <h3>Keyboards</h3>
+            <p>Computer accessories</p>
+        </div>
+
+        <div class="equipment-card">
+            <img
+            src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf"
+            alt="Monitor">
+            <h3>Monitors</h3>
+            <p>Display equipment</p>
+        </div>
+
+        <div class="equipment-card">
+            <img
+            src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7"
+            alt="Computer Hardware">
+            <h3>Hardware</h3>
+            <p>Laboratory components</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+    <h2>Manage Your Laboratory Smarter</h2>
+    <p>Make laboratory equipment management simple and organized with LABTRACK.</p>
+    <a href="login.html">ADMIN LOGIN →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>⚙ LAB<span>TRACK</span></h3>
+    <p>College Laboratory Management System</p>
+    <p>Smart Equipment Management • Digital Records • Easy Tracking</p>
+    <p>© 2026 LABTRACK. All Rights Reserved.</p>
+</footer>
+
+<script>
+async function loadDashboard() {
+    try {
+        const response = await fetch("/api/dashboard");
+
+        if (!response.ok) {
+            throw new Error("Dashboard data could not be loaded");
+        }
+
+        const data = await response.json();
+
+        document.getElementById("totalEquipment").textContent =
+            data.totalEquipment;
+
+        document.getElementById("totalStudents").textContent =
+            data.totalStudents;
+
+        document.getElementById("issuedEquipment").textContent =
+            data.issuedEquipment;
+
+    } catch (error) {
+        console.error("Dashboard Error:", error);
+    }
+}
+
+loadDashboard();
+</script>
+
+</body>
+</html>
+```

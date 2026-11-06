@@ -1,0 +1,517 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Equipment | LABTRACK</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #252b3b;
+}
+
+/* HEADER */
+header {
+    background: #101d35;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #e9bd70;
+}
+
+.logo span {
+    color: white;
+}
+
+header p {
+    font-size: 12px;
+    color: #cbd2df;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+nav {
+    background: #192b49;
+    padding: 17px 5%;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e9bd70;
+}
+
+/* BANNER */
+.banner {
+    min-height: 300px;
+    background:
+    linear-gradient(rgba(10,22,42,0.85), rgba(10,22,42,0.75)),
+    url("https://images.unsplash.com/photo-1519389950473-47ba0277781c")
+    center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 45px 20px;
+}
+
+.banner h1 {
+    font-size: 43px;
+    margin-bottom: 15px;
+}
+
+.banner h1 span {
+    color: #e9bd70;
+}
+
+.banner p {
+    color: #e2e6ed;
+    font-size: 16px;
+}
+
+/* PAGE CONTENT */
+.container {
+    padding: 55px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    color: #172b4d;
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+/* SEARCH */
+.search-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.search-area input {
+    width: 100%;
+    max-width: 550px;
+    padding: 14px 18px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-area input:focus {
+    border-color: #d5a74e;
+    box-shadow: 0 0 5px #d5a74e55;
+}
+
+/* EQUIPMENT GRID */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+    gap: 25px;
+}
+
+.equipment-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px #00000012;
+    transition: 0.3s;
+}
+
+.equipment-card:hover {
+    transform: translateY(-6px);
+}
+
+.equipment-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: #172b4d;
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.category {
+    color: #a87827;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #666;
+}
+
+.details strong {
+    color: #172b4d;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 7px 13px;
+    background: #e4f7eb;
+    color: #21834b;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status.low {
+    background: #fff0dc;
+    color: #a66a12;
+}
+
+.status.unavailable {
+    background: #ffe4e4;
+    color: #bd3434;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 35px;
+    color: #777;
+    background: white;
+    border-radius: 10px;
+}
+
+/* INFORMATION */
+.info {
+    background: #172b4d;
+    color: white;
+    text-align: center;
+    padding: 50px 8%;
+}
+
+.info h2 {
+    color: #e9bd70;
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+
+.info p {
+    line-height: 1.8;
+    color: #dce2eb;
+    max-width: 750px;
+    margin: auto;
+}
+
+/* FOOTER */
+footer {
+    background: #101d35;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    line-height: 1.9;
+}
+
+footer span {
+    color: #e9bd70;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .banner h1 {
+        font-size: 33px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div>
+        <div class="logo">⚙ LAB<span>TRACK</span></div>
+        <p>COLLEGE LABORATORY MANAGEMENT SYSTEM</p>
+    </div>
+
+    <div>
+        <p>📍 Smart Laboratory Management</p>
+        <p>💻 Manage • Monitor • Maintain</p>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="equipment.html" class="active">EQUIPMENT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html">ADMIN LOGIN</a>
+</nav>
+
+<!-- BANNER -->
+<section class="banner">
+    <div>
+        <h1>Our <span>Laboratory Equipment</span></h1>
+        <p>Explore and check the availability of laboratory equipment</p>
+    </div>
+</section>
+
+<!-- EQUIPMENT -->
+<section class="container">
+
+    <div class="section-title">
+        <h2>Equipment Collection</h2>
+        <p>Equipment information connected to our laboratory database</p>
+    </div>
+
+    <div class="search-area">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search equipment by name or category..."
+            oninput="filterEquipment()">
+    </div>
+
+    <div class="equipment-grid" id="equipmentGrid">
+
+        <div class="empty-message">Loading equipment...</div>
+
+    </div>
+
+</section>
+
+<!-- INFORMATION -->
+<section class="info">
+    <h2>Well Maintained Laboratory Resources</h2>
+    <p>
+        LABTRACK helps laboratory administrators maintain
+        equipment details, monitor available quantities
+        and organize equipment usage through a digital system.
+    </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>⚙ LAB<span>TRACK</span></h3>
+    <p>College Laboratory Management System</p>
+    <p>Smart Equipment Management • Digital Records • Easy Tracking</p>
+    <p>© 2026 LABTRACK. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+/* EQUIPMENT IMAGE COLLECTION */
+const equipmentImages = {
+    computer: "https://images.unsplash.com/photo-1593640408182-31c70c8268f5",
+    keyboard: "https://images.unsplash.com/photo-1587829741301-dc798b83add3",
+    mouse: "https://images.unsplash.com/photo-1527814050087-3793815479db",
+    monitor: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf",
+    printer: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6",
+    projector: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb",
+    router: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2",
+    switch: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+    ups: "https://images.unsplash.com/photo-1621905251918-48416bd8575a",
+    headphones: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
+};
+
+let allEquipment = [];
+
+function getEquipmentImage(name) {
+    const key = name.toLowerCase();
+
+    for (const item in equipmentImages) {
+        if (key.includes(item)) {
+            return equipmentImages[item];
+        }
+    }
+
+    return "https://images.unsplash.com/photo-1519389950473-47ba0277781c";
+}
+
+/* LOAD DATABASE EQUIPMENT */
+async function loadEquipment() {
+
+    const grid = document.getElementById("equipmentGrid");
+
+    try {
+        const response = await fetch("/api/equipment");
+
+        if (!response.ok) {
+            throw new Error("Unable to load equipment");
+        }
+
+        allEquipment = await response.json();
+
+        displayEquipment(allEquipment);
+
+    } catch (error) {
+
+        grid.innerHTML = `
+            <div class="empty-message">
+                <h3>Unable to load equipment</h3>
+                <p>Please check your server and database connection.</p>
+            </div>
+        `;
+
+        console.error(error);
+    }
+}
+
+/* DISPLAY EQUIPMENT */
+function displayEquipment(items) {
+
+    const grid = document.getElementById("equipmentGrid");
+
+    if (items.length === 0) {
+        grid.innerHTML = `
+            <div class="empty-message">
+                No equipment found.
+            </div>
+        `;
+        return;
+    }
+
+    grid.innerHTML = items.map(item => {
+
+        const available = Number(item.available_quantity);
+        const total = Number(item.quantity);
+
+        let status = "Available";
+        let statusClass = "";
+
+        if (available === 0) {
+            status = "Out of Stock";
+            statusClass = "unavailable";
+        } else if (available <= 3) {
+            status = "Low Stock";
+            statusClass = "low";
+        }
+
+        return `
+            <div class="equipment-card">
+
+                <img
+                    src="${getEquipmentImage(item.name)}"
+                    alt="${item.name}"
+                    onerror="this.src='https://images.unsplash.com/photo-1519389950473-47ba0277781c'">
+
+                <div class="card-content">
+
+                    <h3>${escapeHTML(item.name)}</h3>
+
+                    <div class="category">
+                        ${escapeHTML(item.category || "General")}
+                    </div>
+
+                    <div class="details">
+                        <span>Total Quantity</span>
+                        <strong>${total}</strong>
+                    </div>
+
+                    <div class="details">
+                        <span>Available</span>
+                        <strong>${available}</strong>
+                    </div>
+
+                    <span class="status ${statusClass}">
+                        ${status}
+                    </span>
+
+                </div>
+            </div>
+        `;
+
+    }).join("");
+}
+
+/* SEARCH */
+function filterEquipment() {
+
+    const search = document
+        .getElementById("searchInput")
+        .value.toLowerCase()
+        .trim();
+
+    const filtered = allEquipment.filter(item =>
+        (item.name || "").toLowerCase().includes(search) ||
+        (item.category || "").toLowerCase().includes(search)
+    );
+
+    displayEquipment(filtered);
+}
+
+/* SAFE TEXT DISPLAY */
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[character]);
+}
+
+loadEquipment();
+
+</script>
+
+</body>
+</html>
+```

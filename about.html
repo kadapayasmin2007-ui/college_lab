@@ -1,0 +1,426 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | LABTRACK</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #f5f6fa;
+    color: #252b3b;
+}
+
+/* HEADER */
+header {
+    background: #101d35;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #e9bd70;
+}
+
+.logo span {
+    color: white;
+}
+
+header p {
+    font-size: 12px;
+    color: #cbd2df;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+nav {
+    background: #192b49;
+    padding: 17px 5%;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e9bd70;
+}
+
+/* PAGE BANNER */
+.banner {
+    min-height: 320px;
+    background:
+    linear-gradient(rgba(10,22,42,0.82), rgba(10,22,42,0.82)),
+    url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da")
+    center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+}
+
+.banner h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.banner h1 span {
+    color: #e9bd70;
+}
+
+.banner p {
+    font-size: 17px;
+    color: #e2e6ed;
+}
+
+/* ABOUT */
+.about {
+    padding: 65px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #00000018;
+}
+
+.about h2 {
+    color: #172b4d;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.about h2 span {
+    color: #c4933e;
+}
+
+.about p {
+    color: #666;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+/* MISSION AND VISION */
+.mission {
+    background: #172b4d;
+    padding: 65px 8%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.mission-card {
+    background: #21385c;
+    padding: 35px;
+    border-radius: 12px;
+    border-bottom: 4px solid #e9bd70;
+}
+
+.mission-card h2 {
+    color: #e9bd70;
+    margin-bottom: 17px;
+    font-size: 27px;
+}
+
+.mission-card p {
+    color: #e2e6ed;
+    line-height: 1.9;
+}
+
+/* FEATURES */
+.features {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-title h2 {
+    color: #172b4d;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 23px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px 22px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px #00000010;
+    border-bottom: 4px solid #d5a74e;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+}
+
+.feature-card .icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #172b4d;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* IMAGE SECTION */
+.gallery {
+    padding: 20px 8% 65px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* FOOTER */
+footer {
+    background: #101d35;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    line-height: 1.9;
+}
+
+footer span {
+    color: #e9bd70;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .mission {
+        grid-template-columns: 1fr;
+    }
+
+    .banner h1 {
+        font-size: 34px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div>
+        <div class="logo">⚙ LAB<span>TRACK</span></div>
+        <p>COLLEGE LABORATORY MANAGEMENT SYSTEM</p>
+    </div>
+
+    <div>
+        <p>📍 Smart Laboratory Management</p>
+        <p>💻 Manage • Monitor • Maintain</p>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html" class="active">ABOUT</a>
+    <a href="equipment.html">EQUIPMENT</a>
+    <a href="services.html">SERVICES</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="login.html">ADMIN LOGIN</a>
+</nav>
+
+<!-- BANNER -->
+<section class="banner">
+    <div>
+        <h1>About <span>LABTRACK</span></h1>
+        <p>Learn more about our smart laboratory management system</p>
+    </div>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="about">
+
+    <img
+    src="https://images.unsplash.com/photo-1581092160562-40aa08e78837"
+    alt="Modern College Laboratory">
+
+    <div>
+        <h2>Who <span>We Are</span></h2>
+
+        <p>
+            LABTRACK is a College Laboratory Management System
+            developed to make laboratory activities easier,
+            faster and more organized.
+        </p>
+
+        <p>
+            The system provides a centralized platform to manage
+            laboratory equipment, student information, equipment
+            issue and return records, and availability details.
+        </p>
+
+        <p>
+            It helps laboratory administrators maintain accurate
+            records and monitor equipment usage efficiently.
+        </p>
+    </div>
+
+</section>
+
+<!-- MISSION AND VISION -->
+<section class="mission">
+
+    <div class="mission-card">
+        <h2>🎯 Our Mission</h2>
+        <p>
+            Our mission is to simplify laboratory management by
+            providing a user-friendly digital platform for
+            maintaining equipment records, student details and
+            laboratory transactions.
+        </p>
+    </div>
+
+    <div class="mission-card">
+        <h2>👁 Our Vision</h2>
+        <p>
+            Our vision is to create a smart and organized
+            laboratory environment where equipment can be
+            monitored, managed and tracked efficiently through
+            modern technology.
+        </p>
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+
+    <div class="section-title">
+        <h2>Why Choose LABTRACK?</h2>
+        <p>Features that make laboratory management easier</p>
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="icon">💻</div>
+            <h3>Equipment Management</h3>
+            <p>
+                Maintain equipment details, quantities and
+                availability in one place.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">👨‍🎓</div>
+            <h3>Student Records</h3>
+            <p>
+                Organize student information and maintain
+                registration details.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">📦</div>
+            <h3>Issue Management</h3>
+            <p>
+                Record equipment issued to students and
+                monitor issue details.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">🔄</div>
+            <h3>Return Tracking</h3>
+            <p>
+                Update return records and maintain
+                equipment availability.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LAB IMAGE -->
+<section class="gallery">
+    <img
+    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3"
+    alt="Students working in a computer laboratory">
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>⚙ LAB<span>TRACK</span></h3>
+    <p>College Laboratory Management System</p>
+    <p>Smart Equipment Management • Digital Records • Easy Tracking</p>
+    <p>© 2026 LABTRACK. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+```

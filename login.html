@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | LABTRACK</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #071a3d, #123c78, #071a3d);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffd54a;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header a:hover {
+    color: #ffd54a;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    padding: 40px 35px;
+    border-radius: 15px;
+    box-shadow: 0 15px 45px rgba(0,0,0,.3);
+}
+
+.login-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 18px;
+    background: #fff3c4;
+    color: #9a7000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}
+
+.login-card h1 {
+    text-align: center;
+    color: #0b2454;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 28px;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    color: #263b62;
+    font-weight: 600;
+    margin: 17px 0 8px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #17458b;
+    box-shadow: 0 0 0 3px rgba(23,69,139,.1);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    background: #0b2454;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #d4a500;
+    color: #071a3d;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #b91c1c;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 22px;
+    color: #17458b;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+footer span {
+    color: #ffd54a;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">LABTRACK</div>
+    <a href="index.html">← Back to Home</a>
+</header>
+
+<main>
+
+    <div class="login-card">
+
+        <div class="login-icon">🔐</div>
+
+        <h1>Admin Login</h1>
+
+        <p class="subtitle">
+            Welcome to LABTRACK Management System
+        </p>
+
+        <form id="loginForm">
+
+            <label for="username">Admin Username</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter admin username"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                required
+            >
+
+            <button type="submit" class="login-btn">
+                LOGIN
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+        <a href="index.html" class="back-link">
+            Back to Home
+        </a>
+
+    </div>
+
+</main>
+
+<footer>
+    © 2026 <span>LABTRACK</span> | College Laboratory Management System
+</footer>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("message").textContent =
+        "Login authentication is not connected yet. Backend setup is required.";
+});
+</script>
+
+</body>
+</html>
